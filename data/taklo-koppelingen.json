@@ -1,0 +1,53 @@
+{
+  "snapshotDatum": "2026-09-16",
+  "bron": "GEGENEREERD uit taklo/packages/shared/src/constants/accounting.ts door ops/mcp-evi/genereer-taklo-feiten.mjs. Niet met de hand wijzigen.",
+  "omschrijving": "Boekhoudpakketten waar Taklo mee koppelt. 'zelfAanTeZetten' betekent dat een ondernemer de koppeling zelf aanzet onder Instellingen > Boekhouding, zonder implementatietraject.",
+  "aantal": 6,
+  "aantalZelfAanTeZetten": 5,
+  "pakketten": [
+    {
+      "sleutel": "JORTT",
+      "naam": "Jortt",
+      "website": "https://www.jortt.nl",
+      "zelfAanTeZetten": true,
+      "toelichting": "Je vult je eigen gegevens in onder Instellingen > Boekhouding en kiest het pakket. Geen implementatietraject, geen support-stap."
+    },
+    {
+      "sleutel": "MONEYBIRD",
+      "naam": "Moneybird",
+      "website": "https://www.moneybird.nl",
+      "zelfAanTeZetten": true,
+      "toelichting": "Je vult je eigen gegevens in onder Instellingen > Boekhouding en kiest het pakket. Geen implementatietraject, geen support-stap."
+    },
+    {
+      "sleutel": "SNELSTART",
+      "naam": "SnelStart",
+      "website": "https://www.snelstart.nl",
+      "zelfAanTeZetten": true,
+      "toelichting": "Je vult je eigen gegevens in onder Instellingen > Boekhouding en kiest het pakket. Geen implementatietraject, geen support-stap."
+    },
+    {
+      "sleutel": "BOEKHOUDEN_NL",
+      "naam": "Boekhouden.nl",
+      "website": "https://www.boekhouden.nl",
+      "zelfAanTeZetten": true,
+      "toelichting": "Je vult je eigen gegevens in onder Instellingen > Boekhouding en kiest het pakket. Geen implementatietraject, geen support-stap."
+    },
+    {
+      "sleutel": "EXACT_ONLINE",
+      "naam": "Exact Online",
+      "website": "https://www.exact.com/nl",
+      "zelfAanTeZetten": false,
+      "toelichting": "De toegang moet eenmalig bij de leverancier zelf verleend worden; die stap zit nog niet in Taklo. Neem contact op met support."
+    },
+    {
+      "sleutel": "AFAS",
+      "naam": "AFAS Profit",
+      "website": "https://www.afas.nl",
+      "zelfAanTeZetten": true,
+      "toelichting": "Je vult je eigen gegevens in onder Instellingen > Boekhouding en kiest het pakket. Geen implementatietraject, geen support-stap."
+    }
+  ],
+  "peppol": "Los van een boekhoudkoppeling verstuurt én ontvangt Taklo e-facturen over het Peppol-netwerk. Dat werkt zonder boekhoudpakket.",
+  "meerUrl": "https://taklo.nl/functies/boekhouding-koppelingen"
+}

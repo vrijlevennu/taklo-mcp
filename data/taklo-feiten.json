@@ -1,0 +1,324 @@
+{
+  "snapshotDatum": "2026-09-16",
+  "bron": "GEGENEREERD uit taklo/packages/shared (plans.ts, plan-limits.ts, constants/fair-use.ts, feature-registry.ts) door ops/mcp-evi/genereer-taklo-feiten.mjs. Niet met de hand wijzigen.",
+  "prijzen": {
+    "bedrijfsbasisPerMaandEuro": 79,
+    "perExtraGebruikerPerMaandEuro": 35,
+    "btw": "Alle prijzen zijn exclusief btw.",
+    "btwKort": "excl. btw",
+    "omschrijving": "Alles-in-één: € 79 per maand per bedrijf (1e gebruiker inbegrepen, inclusief Evi op alle kanalen, telefoonnummer, WhatsApp-kanaal en de fair-use-bundel), plus € 35 per extra gebruiker per maand. Alle prijzen zijn exclusief btw."
+  },
+  "fairUse": {
+    "belminutenBasis": 500,
+    "belminutenPerExtraGebruiker": 250,
+    "smsBasis": 25,
+    "smsPerExtraGebruiker": 10,
+    "omschrijving": "Eén pot belminuten voor alle Evi-gesprekken samen (klant- én eigen gesprekken), die automatisch meegroeit per extra gebruiker."
+  },
+  "bijkopen": {
+    "belminutenPer100Euro": 12,
+    "smsPer50Euro": 12.5,
+    "extraNummerPerMaandEuro": 3,
+    "extraBankrekeningPerMaandEuro": 5,
+    "omschrijving": "Bijkopen zijn abonnementsregels, per maand opzegbaar. Geen credits of prepaid. Alle prijzen zijn exclusief btw."
+  },
+  "proefperiode": {
+    "dagen": 14,
+    "omschrijving": "14 dagen gratis proberen, geen creditcard nodig om te starten. Na de proefperiode kies je een abonnement of stopt het vanzelf."
+  },
+  "diensten": "Taklo is alles-in-één bedrijfssoftware voor installatie- en onderhoudsbedrijven: aanvragen, offertes, werkbonnen, planning, facturatie, een boekhouding met grootboek en btw-aangifte, een klantenportaal onder je eigen merk en Evi (AI-telefoniste/assistent) op telefoon, WhatsApp en e-mail.",
+  "functies": [
+    {
+      "sleutel": "ai-medewerker",
+      "naam": "AI-medewerker",
+      "omschrijving": "AI kan de telefoon overnemen wanneer niemand opneemt: naam, reden en contactgegevens uitvragen, samenvatten, vervolgtaak klaarzetten.",
+      "categorie": "Telefonie & AI"
+    },
+    {
+      "sleutel": "voicemail-naar-actie",
+      "naam": "Voicemail naar actie",
+      "omschrijving": "Ingesproken voicemail wordt getranscribeerd, het type werk herkend en een concept-opvolging (taak/offertevoorstel) klaargezet.",
+      "categorie": "Telefonie & AI"
+    },
+    {
+      "sleutel": "ringback-tone",
+      "naam": "Comfort-bericht tijdens doorschakeling",
+      "omschrijving": "Bericht/muziek tijdens het doorschakelen zodat een beller niet in stilte wacht.",
+      "categorie": "Telefonie & AI"
+    },
+    {
+      "sleutel": "telefonie-routing",
+      "naam": "Slimme call-routing",
+      "omschrijving": "Route-regels bepalen wie eerst rinkelt en wanneer AI overneemt.",
+      "categorie": "Telefonie & AI"
+    },
+    {
+      "sleutel": "whatsapp-business-installateur",
+      "naam": "WhatsApp Business voor installateurs",
+      "omschrijving": "Eigen WhatsApp-nummer (Meta Embedded Signup) gekoppeld aan de klantkaart, inclusief AI-conceptantwoorden.",
+      "categorie": "WhatsApp & Berichten"
+    },
+    {
+      "sleutel": "ai-conceptantwoord",
+      "naam": "AI-conceptantwoord",
+      "omschrijving": "AI stelt een conceptantwoord op voor mail/WhatsApp; mens keurt goed voor verzending (draft-only).",
+      "categorie": "WhatsApp & Berichten"
+    },
+    {
+      "sleutel": "berichten-centraal",
+      "naam": "Centrale berichten-inbox",
+      "omschrijving": "Mail, WhatsApp en telefonie samen in één inbox per klant/gesprek.",
+      "categorie": "WhatsApp & Berichten"
+    },
+    {
+      "sleutel": "ai-offerte-suggestie",
+      "naam": "AI-offerte-suggestie",
+      "omschrijving": "Bij een nieuwe foto-aanvraag alvast een concept-offerte voorbereiden (draft-only, mens keurt goed).",
+      "categorie": "Offertes & Werkorders"
+    },
+    {
+      "sleutel": "digitale-werkbon",
+      "naam": "Digitale werkbon",
+      "omschrijving": "Werkbon met materiaal, uren en handtekening; basis van het klus-spine.",
+      "categorie": "Offertes & Werkorders"
+    },
+    {
+      "sleutel": "offertes-calculaties",
+      "naam": "Offertes en calculaties",
+      "omschrijving": "Offertes opstellen met materiaal- en urencalculatie, geldig-tot en acceptatieflow.",
+      "categorie": "Offertes & Werkorders"
+    },
+    {
+      "sleutel": "opleverdossier-digitaal",
+      "naam": "Digitaal opleverdossier",
+      "omschrijving": "Foto's, documenten en handtekening bij oplevering gebundeld per klus.",
+      "categorie": "Offertes & Werkorders"
+    },
+    {
+      "sleutel": "planning-monteurs",
+      "naam": "Monteurs-planning",
+      "omschrijving": "Planbord met monteurs, planning en routes.",
+      "categorie": "Planning & Service"
+    },
+    {
+      "sleutel": "klantenportaal",
+      "naam": "Branded klantenportaal",
+      "omschrijving": "Publiek klantportaal met eigen huisstijl waar klanten status, facturen en aanvragen kunnen zien/doen.",
+      "categorie": "Planning & Service"
+    },
+    {
+      "sleutel": "planning-routeoptimalisatie",
+      "naam": "Planning en routeoptimalisatie",
+      "omschrijving": "Routes tussen klussen optimaliseren op reistijd.",
+      "categorie": "Planning & Service"
+    },
+    {
+      "sleutel": "servicecontracten-onderhoud",
+      "naam": "Servicecontracten en onderhoud",
+      "omschrijving": "Onderhoudscontracten met herhalende planning; upsell-nudge na een afgeronde klus.",
+      "categorie": "Planning & Service"
+    },
+    {
+      "sleutel": "mjop-vve-vastgoed",
+      "naam": "MJOP en vastgoedonderhoud",
+      "omschrijving": "Meerjarenonderhoudsplan voor VvE's en vastgoedbeheerders.",
+      "categorie": "Planning & Service"
+    },
+    {
+      "sleutel": "inspecties-checklists",
+      "naam": "Inspecties en checklists",
+      "omschrijving": "Digitale inspectieformulieren en checklists per klustype.",
+      "categorie": "Planning & Service"
+    },
+    {
+      "sleutel": "isde-dossiers",
+      "naam": "ISDE-dossiers",
+      "omschrijving": "ISDE-subsidiedossiers en deadline-herinneringen voor warmtepompen e.d.",
+      "categorie": "Planning & Service"
+    },
+    {
+      "sleutel": "automatiseringen-installatiebedrijf",
+      "naam": "Automatiseringen en nudges",
+      "omschrijving": "Automatische facturatie, herinneringen, follow-ups en statusmeldingen — per automatisering los aan/uit te zetten.",
+      "categorie": "Planning & Service"
+    },
+    {
+      "sleutel": "verhuur-materieel",
+      "naam": "Verhuur en materieel",
+      "omschrijving": "Verhuurcatalogus, reserveringen, borg en bezorgen/ophalen.",
+      "categorie": "Planning & Service"
+    },
+    {
+      "sleutel": "online-verhuurpagina",
+      "naam": "Online verhuurpagina",
+      "omschrijving": "Hosted verhuurpagina (taklo.nl/<slug>/verhuur) waar klanten materieel zelf reserveren.",
+      "categorie": "Planning & Service"
+    },
+    {
+      "sleutel": "urenregistratie-goedkeuring",
+      "naam": "Urenregistratie & goedkeuring",
+      "omschrijving": "Uren schrijven per klus met goedkeuring door planner/eigenaar.",
+      "categorie": "Planning & Service"
+    },
+    {
+      "sleutel": "team-rollen-rechten",
+      "naam": "Team, rollen en rechten",
+      "omschrijving": "Rollen (eigenaar, planner, monteur, bedrijfsleider) met eigen rechten en zichtbaarheid.",
+      "categorie": "Planning & Service"
+    },
+    {
+      "sleutel": "onderaanneming-partnernetwerk",
+      "naam": "Onderaanneming & partnernetwerk",
+      "omschrijving": "Klussen doorzetten naar of ontvangen van partnerbedrijven.",
+      "categorie": "Planning & Service"
+    },
+    {
+      "sleutel": "peppol-e-facturatie",
+      "naam": "Peppol e-facturatie",
+      "omschrijving": "Verkoopfacturen verzenden over het Peppol-netwerk — de weg waarlangs je een e-factuur in het Europese formaat EN 16931 aflevert bij de overheid of een grootzakelijke klant die erom vraagt. Inkomende e-facturen worden automatisch inkoopfacturen.",
+      "categorie": "Boekhouden & Facturatie"
+    },
+    {
+      "sleutel": "boekhouding-koppelingen",
+      "naam": "Boekhouding-koppelingen",
+      "omschrijving": "Koppeling met Jortt, Moneybird, Snelstart, Boekhouden.nl, Exact Online of AFAS.",
+      "categorie": "Boekhouden & Facturatie"
+    },
+    {
+      "sleutel": "banktransacties-matchen",
+      "naam": "Banktransacties matchen",
+      "omschrijving": "Banktransacties (via Ponto/Enable Banking) automatisch matchen aan facturen.",
+      "categorie": "Boekhouden & Facturatie"
+    },
+    {
+      "sleutel": "online-betalen",
+      "naam": "Online betalen",
+      "omschrijving": "Klanten betalen facturen online via Mollie of Stripe.",
+      "categorie": "Boekhouden & Facturatie"
+    },
+    {
+      "sleutel": "bulkbetalingen",
+      "naam": "Bulkbetalingen",
+      "omschrijving": "Meerdere facturen in één keer afhandelen/exporteren.",
+      "categorie": "Boekhouden & Facturatie"
+    },
+    {
+      "sleutel": "rapportages-winst-inzicht",
+      "naam": "Rapportages, marge en winst",
+      "omschrijving": "Rapportages over omzet, marge en winst per klus/klant/periode.",
+      "categorie": "Boekhouden & Facturatie"
+    },
+    {
+      "sleutel": "zelflerende-bankindeling",
+      "naam": "Zelflerende bank-indeler",
+      "omschrijving": "Elke bevestiging of correctie van een bankindeling wordt een regel (tegenpartij + richting → grootboekrekening) die het volgende voorstel stuurt.",
+      "categorie": "Boekhouden & Facturatie"
+    },
+    {
+      "sleutel": "marge-per-klus",
+      "naam": "Marge per klus (kostprijs op de regel)",
+      "omschrijving": "De inkoopprijs wordt bevroren op de offerteregel, reist mee naar de factuur en overleeft regelbewerking; winstgevendheid rekent ermee.",
+      "categorie": "Boekhouden & Facturatie"
+    },
+    {
+      "sleutel": "bonnetje-appen",
+      "naam": "Bonnetje appen naar Evi",
+      "omschrijving": "Het eigen team appt een foto met bon-bijschrift of een PDF via WhatsApp; daar ontstaat een inkoopfactuur uit met uitlezing, leverancier en regels.",
+      "categorie": "WhatsApp & Berichten"
+    },
+    {
+      "sleutel": "2ba-artikeldata-installateur",
+      "naam": "2BA artikeldata voor installateurs",
+      "omschrijving": "Actuele 2BA-artikeldata (prijzen, specificaties) rechtstreeks in offertes en inkoop.",
+      "categorie": "Inkoop & Materiaal"
+    },
+    {
+      "sleutel": "etim-productclassificatie",
+      "naam": "ETIM productclassificatie",
+      "omschrijving": "Producten geclassificeerd volgens de ETIM-standaard voor eenduidige vergelijkbaarheid.",
+      "categorie": "Inkoop & Materiaal"
+    },
+    {
+      "sleutel": "dico-inkooporders",
+      "naam": "DICO inkooporders",
+      "omschrijving": "Inkooporders en pakbonnen volgens de DICO-ketenstandaard.",
+      "categorie": "Inkoop & Materiaal"
+    },
+    {
+      "sleutel": "inkoopfacturen-ocr",
+      "naam": "Inkoopfacturen met AI-OCR",
+      "omschrijving": "Inkoopfacturen automatisch uitgelezen (OCR) en voorgesteld ter goedkeuring.",
+      "categorie": "Inkoop & Materiaal"
+    },
+    {
+      "sleutel": "oci-bestellen-groothandel",
+      "naam": "OCI bestellen bij groothandels",
+      "omschrijving": "Rechtstreeks bestellen bij groothandels (Technische Unie, Rexel, Solar) via OCI/S2S-koppeling.",
+      "categorie": "Inkoop & Materiaal"
+    },
+    {
+      "sleutel": "groothandel-prijs-voorraadcheck",
+      "naam": "Groothandel prijs- en voorraadcheck",
+      "omschrijving": "Actuele prijs en voorraad bij de groothandel direct zichtbaar tijdens het samenstellen van een offerte.",
+      "categorie": "Inkoop & Materiaal"
+    },
+    {
+      "sleutel": "voorraad-busvoorraad",
+      "naam": "Voorraad + busvoorraad",
+      "omschrijving": "Voorraadbeheer op locatie én per bus/monteur.",
+      "categorie": "Inkoop & Materiaal"
+    },
+    {
+      "sleutel": "eigen-productcatalogus-prijslijst",
+      "naam": "Eigen productcatalogus & prijslijst",
+      "omschrijving": "Eigen producten/diensten met prijzen, ook publiceerbaar als webshop.",
+      "categorie": "Inkoop & Materiaal"
+    },
+    {
+      "sleutel": "qr-aanvragen",
+      "naam": "QR-aanvragen en intake",
+      "omschrijving": "QR-code op locatie waarmee klanten direct een serviceaanvraag indienen.",
+      "categorie": "CRM & Klanten"
+    },
+    {
+      "sleutel": "klanthistorie-360",
+      "naam": "360° klanthistorie",
+      "omschrijving": "Alle contactmomenten, offertes, werkbonnen en facturen van een klant in één tijdlijn.",
+      "categorie": "CRM & Klanten"
+    },
+    {
+      "sleutel": "meerdere-telefoons-emails",
+      "naam": "Meerdere telefoonnummers + e-mails per klant",
+      "omschrijving": "Meerdere contactkanalen per klant vastleggen en herkennen bij inkomend contact.",
+      "categorie": "CRM & Klanten"
+    },
+    {
+      "sleutel": "reviews-reputatiemanagement",
+      "naam": "Reviews & reputatiemanagement",
+      "omschrijving": "Google-reviews verzamelen en tonen na een afgeronde klus.",
+      "categorie": "CRM & Klanten"
+    },
+    {
+      "sleutel": "zakelijke-klanten-bedrijfsdossiers",
+      "naam": "Zakelijke klanten & bedrijfsdossiers",
+      "omschrijving": "Aparte dossiers voor zakelijke klanten met KvK-gegevens en contactpersonen.",
+      "categorie": "CRM & Klanten"
+    },
+    {
+      "sleutel": "documentbeheer-klant-project",
+      "naam": "Documentbeheer per klant en project",
+      "omschrijving": "Documenten (contracten, tekeningen, certificaten) gekoppeld aan klant of project.",
+      "categorie": "CRM & Klanten"
+    },
+    {
+      "sleutel": "foto-schouw-stafpad",
+      "naam": "Foto-schouw op het stafpad",
+      "omschrijving": "Monteur appt een foto vanaf de klus; het schouwverslag gaat als context mee naar Evi's stafantwoord.",
+      "categorie": "Monteur & Staf"
+    }
+  ],
+  "aantalFunctiesLive": 48,
+  "registreerUrl": "https://taklo.nl/registreren",
+  "registreerUrlAgent": "https://taklo.nl/registreren?utm_source=ai-agent&utm_medium=mcp&utm_campaign=mcp-koppelpunt",
+  "functiesUrl": "https://taklo.nl/functies"
+}
