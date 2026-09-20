@@ -37,7 +37,7 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT ? Number(process.env.PORT) : 8790;
-const VERSION = "1.1.0";
+const VERSION = "1.1.1";
 
 // ---------------------------------------------------------------------------
 // Data-snapshots
