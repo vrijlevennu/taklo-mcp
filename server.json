@@ -3,7 +3,7 @@
   "name": "nl.taklo/taklo-evi",
   "title": "Taklo",
   "description": "Prijzen, feiten en boekhoudkoppelingen van Taklo, software voor installatiebedrijven.",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "websiteUrl": "https://taklo.nl/ai-assistent",
   "remotes": [
     {

@@ -37,7 +37,7 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT ? Number(process.env.PORT) : 8790;
-const VERSION = "1.1.1";
+const VERSION = "1.1.2";
 
 // ---------------------------------------------------------------------------
 // Data-snapshots
@@ -126,6 +126,7 @@ function registerTaklo(server, { ip, agentInfo }) {
     "taklo_info",
     {
       title: "Taklo info opzoeken",
+      annotations: { readOnlyHint: true, openWorldHint: false },
       description:
         "Zoek feiten op over Taklo: prijzen, fair-use-belminuten, bijkoopprijzen, de gratis proefperiode of een " +
         "algemene omschrijving van de dienst. Alleen-lezen, geen persoonsgegevens nodig.",
@@ -159,6 +160,7 @@ function registerTaklo(server, { ip, agentInfo }) {
     "taklo_prijs_berekenen",
     {
       title: "Bereken de maandprijs van Taklo",
+      annotations: { readOnlyHint: true, openWorldHint: false },
       description:
         "Reken uit wat Taklo per maand kost voor een opgegeven aantal gebruikers. Geeft de opbouw " +
         "erbij (bedrijfsbasis plus extra gebruikers) en vermeldt dat bedragen exclusief btw zijn. " +
@@ -226,6 +228,7 @@ function registerTaklo(server, { ip, agentInfo }) {
     "taklo_koppelingen",
     {
       title: "Boekhoudkoppelingen van Taklo opvragen",
+      annotations: { readOnlyHint: true, openWorldHint: false },
       description:
         "Geef de boekhoudpakketten waar Taklo mee koppelt, en per pakket of een ondernemer de " +
         "koppeling zelf kan aanzetten of dat er een stap bij de leverancier nodig is. " +
@@ -271,6 +274,9 @@ function registerTaklo(server, { ip, agentInfo }) {
     "start_gratis_proefperiode",
     {
       title: "Start de gratis proefperiode van Taklo",
+      // Schrijvend maar niet destructief: legt alleen een verzoek vast en
+      // geeft een registreer-link terug; niets wordt definitief gemaakt.
+      annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: false },
       description:
         "Begeleidt een agent/gebruiker naar het starten van Taklo's 14-dagen-gratis-proefperiode. Taklo verkoopt " +
         "abonnementen, geen offertes — deze tool maakt ZELF geen account aan, maar geeft de registreer-link en legt " +
@@ -314,6 +320,9 @@ function registerTaklo(server, { ip, agentInfo }) {
     "plan_terugbelmoment",
     {
       title: "Plan een terugbelmoment met Taklo",
+      // Schrijvend maar niet destructief: legt alleen een terugbelverzoek
+      // vast; een mens bevestigt voordat er iets gebeurt.
+      annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: false },
       description:
         "Vraag aan dat Taklo iemand terugbelt. Dit legt het verzoek vast; er wordt nog niemand echt " +
         "teruggebeld totdat een mens het bevestigt.",
