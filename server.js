@@ -97,12 +97,35 @@ setInterval(() => {
   for (const [key, b] of buckets) if (b.windowStart < cutoff) buckets.delete(key);
 }, 5 * 60_000).unref();
 
-const READ_LIMIT = { max: 30, windowMs: 60_000 };
+// Gateways bundelen al hun gebruikers achter enkele IP's; lezen is een
+// statisch snapshot en mag dus ruim. De globale plafonds beschermen het
+// proces en de ontvanger van de verzoeken, niet het IP.
+const READ_LIMIT = { max: 240, windowMs: 60_000 };
 const WRITE_LIMIT = { max: 5, windowMs: 60_000 };
-const readLimited = (ip) => rateLimited(`read:${ip}`, READ_LIMIT);
-const writeLimited = (ip) => rateLimited(`write:${ip}`, WRITE_LIMIT);
+const READ_GLOBAL = { max: 1200, windowMs: 60_000 };
+const WRITE_GLOBAL = { max: 20, windowMs: 60_000 };
+const readLimited = (ip) => rateLimited(`read:${ip}`, READ_LIMIT) || rateLimited("read:*", READ_GLOBAL);
+const writeLimited = (ip) => rateLimited(`write:${ip}`, WRITE_LIMIT) || rateLimited("write:*", WRITE_GLOBAL);
 
-const RATE_LIMIT_MSG_READ = "Te veel aanvragen. Max 30 lees-acties per minuut per IP-adres. Probeer over een minuut opnieuw.";
+// Ontdubbeling: hetzelfde contactgegeven krijgt binnen 24 uur dezelfde
+// referentie terug in plaats van een nieuw verzoek. In-geheugen, met opzet.
+const recenteVerzoeken = new Map();
+const DEDUPE_MS = 24 * 60 * 60_000;
+const dedupeKey = (tool, contact) => `${tool}:${String(contact).toLowerCase().replace(/[\s()+-]/g, "")}`;
+function eerdereReferentie(tool, contact) {
+  if (!contact) return null;
+  const rij = recenteVerzoeken.get(dedupeKey(tool, contact));
+  return rij && Date.now() - rij.ts < DEDUPE_MS ? rij.referentie : null;
+}
+function onthoudReferentie(tool, contact, referentie) {
+  if (contact) recenteVerzoeken.set(dedupeKey(tool, contact), { referentie, ts: Date.now() });
+}
+setInterval(() => {
+  const cutoff = Date.now() - DEDUPE_MS;
+  for (const [key, rij] of recenteVerzoeken) if (rij.ts < cutoff) recenteVerzoeken.delete(key);
+}, 60 * 60_000).unref();
+
+const RATE_LIMIT_MSG_READ = "Te veel aanvragen. Max 240 lees-acties per minuut per IP-adres. Probeer over een minuut opnieuw.";
 const RATE_LIMIT_MSG_WRITE = "Te veel aanvragen. Max 5 schrijvende acties per minuut per IP-adres. Probeer over een minuut opnieuw.";
 
 // ---------------------------------------------------------------------------
@@ -293,8 +316,12 @@ function registerTaklo(server, { ip, agentInfo }) {
       if (writeLimited(ip)) {
         return { isError: true, content: [{ type: "text", text: RATE_LIMIT_MSG_WRITE }] };
       }
-      const referentie = nieuweReferentie();
-      logAgentRequest({ tool: "start_gratis_proefperiode", referentie, agentInfo, ip });
+      let referentie = eerdereReferentie("start_gratis_proefperiode", args.email);
+      if (!referentie) {
+        referentie = nieuweReferentie();
+        logAgentRequest({ tool: "start_gratis_proefperiode", referentie, agentInfo, ip });
+        onthoudReferentie("start_gratis_proefperiode", args.email, referentie);
+      }
       // BEGRENSDE BEVOEGDHEID. Deze tool maakt GEEN account aan en raakt de
       // Taklo-API niet eens aan — dit proces doet nergens een outbound call.
       // De agent bereidt voor, de mens rondt af op /registreren met zijn eigen
@@ -337,8 +364,12 @@ function registerTaklo(server, { ip, agentInfo }) {
       if (writeLimited(ip)) {
         return { isError: true, content: [{ type: "text", text: RATE_LIMIT_MSG_WRITE }] };
       }
-      const referentie = nieuweReferentie();
-      logAgentRequest({ tool: "plan_terugbelmoment", referentie, agentInfo, ip });
+      let referentie = eerdereReferentie("plan_terugbelmoment", args.telefoon);
+      if (!referentie) {
+        referentie = nieuweReferentie();
+        logAgentRequest({ tool: "plan_terugbelmoment", referentie, agentInfo, ip });
+        onthoudReferentie("plan_terugbelmoment", args.telefoon, referentie);
+      }
       return {
         content: [
           {
