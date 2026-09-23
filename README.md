@@ -2,7 +2,7 @@
 
 De publieke [MCP](https://modelcontextprotocol.io)-server van **Taklo** — all-in-one bedrijfssoftware voor installatie- en onderhoudsbedrijven.
 
-Een AI-agent kan hiermee feiten over Taklo opzoeken, de maandprijs laten uitrekenen, de boekhoudkoppelingen opvragen, en een proefperiode of terugbelverzoek voorbereiden.
+Een AI-agent kan hiermee feiten over Taklo opzoeken, de maandprijs laten uitrekenen, opvragen wat Taklo zelf aan boekhouding doet (facturen, btw, Peppol) en met welke pakketten het optioneel koppelt, en een proefperiode of terugbelverzoek voorbereiden.
 
 ## Het endpoint
 

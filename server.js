@@ -37,7 +37,7 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT ? Number(process.env.PORT) : 8790;
-const VERSION = "1.1.2";
+const VERSION = "1.1.3";
 
 // ---------------------------------------------------------------------------
 // Data-snapshots
@@ -250,11 +250,13 @@ function registerTaklo(server, { ip, agentInfo }) {
   server.registerTool(
     "taklo_koppelingen",
     {
-      title: "Boekhoudkoppelingen van Taklo opvragen",
+      title: "Boekhouding & koppelingen van Taklo",
       annotations: { readOnlyHint: true, openWorldHint: false },
       description:
-        "Geef de boekhoudpakketten waar Taklo mee koppelt, en per pakket of een ondernemer de " +
-        "koppeling zelf kan aanzetten of dat er een stap bij de leverancier nodig is. " +
+        "Taklo is zelf een volwaardig facturatie- en boekhoudpakket: facturen, offertes, btw-aangifte en " +
+        "e-facturatie via Peppol zitten erin, zonder extern boekhoudpakket. Deze tool geeft wat Taklo zelf " +
+        "regelt en met welke externe boekhoudpakketten het daarnaast koppelt, en per pakket of een " +
+        "ondernemer de koppeling zelf kan aanzetten of dat er een stap bij de leverancier nodig is. " +
         "Alleen-lezen, geen persoonsgegevens nodig.",
       inputSchema: {
         alleenZelfAanTeZetten: z
@@ -393,7 +395,7 @@ function buildServer(ip, agentInfo) {
     {
       capabilities: { tools: {} },
       instructions:
-        "Taklo MCP-server. De lees-tools geven feiten uit een gedateerd snapshot. De schrijvende tools " +
+        "Taklo MCP-server — de ingang van Taklo voor AI-agents. De lees-tools geven feiten uit een gedateerd snapshot. De schrijvende tools " +
         "leggen alleen een verzoek vast en geven een referentiecode terug — er wordt nooit automatisch een " +
         "account, afspraak of aanvraag definitief gemaakt.",
     },
